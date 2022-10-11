@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles/style.css" />
+		<title>Weather</title>
+	</head>
+	<body>
+		<main class="main-container" id="main-container">
+			<section class="top-section">
+				<div class="city-icon">
+					<img
+						src="assets/Icons-for-cities/kolkata.svg"
+						alt="City Icon"
+						id="city-img-icon"
+					/>
+				</div>
+				<div class="second-col">
+					<input
+						list="citylist"
+						class="input-box"
+						name="city"
+						id="city"
+						autocomplete="off"
+						value="kolkata"
+					/>
+					<datalist id="citylist"> </datalist>
+					<div class="date-time">
+						<div class="time">
+							<span id="time"
+								>10:10:<span class="second" id="second">44</span>
+							</span>
+							<img
+								src="assets/General-Images/amState.svg"
+								alt="AM State"
+								id="hourState"
+							/>
+						</div>
+						<div class="date">
+							<span id="date">01-Mar-2020</span>
+						</div>
+					</div>
+				</div>
+				<div class="third-col">
+					<div class="temp flex-row">
+						<div>
+							<span> Temp °C </span>
+							<span class="bold-span">
+								<b id="temp-in-c">25 °C</b>
+							</span>
+						</div>
+						<div>
+							<span> Temp °F </span>
+							<span class="bold-span">
+								<b id="temp-in-f">78 °F</b>
+							</span>
+						</div>
+					</div>
+					<div class="line flex-column flex-row">
+						<div></div>
+						<div></div>
+					</div>
+					<div class="atmo flex-row">
+						<div>
+							<span> Humidity </span>
+							<span>
+								<span class="bold-span inline-span" id="humidity">26</span>
+								%
+							</span>
+						</div>
+						<div>
+							<span> Precipitation </span>
+							<span>
+								<span class="bold-span inline-span" id="precipitation">0</span>
+								%
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="forecast" id="forecast">
+					<div class="time-forecast flex-column">
+						<p>NOW</p>
+						<p class="vl">|</p>
+						<p>
+							<img
+								src="assets/Weather-Icons/cloudyIcon.svg"
+								alt="Cloudy Icon"
+							/>
+						</p>
+						<p>6</p>
+					</div>
+					<div class="time-forecast-middle flex-column">
+						<p>&nbsp;</p>
+						<p class="vl">|</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+					</div>
+					<div class="time-forecast flex-column">
+						<p>11 AM</p>
+						<p class="vl">|</p>
+						<p>
+							<img src="assets/Weather-Icons/rainyIcon.svg" alt="Rainy Icon" />
+						</p>
+						<p>7</p>
+					</div>
+					<div class="time-forecast-middle flex-column">
+						<p>&nbsp;</p>
+						<p class="vl">|</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+					</div>
+					<div class="time-forecast flex-column">
+						<p>12 PM</p>
+						<p class="vl">|</p>
+						<p>
+							<img src="assets/Weather-Icons/windyIcon.svg" alt="Windy Icon" />
+						</p>
+						<p>7</p>
+					</div>
+					<div class="time-forecast-middle flex-column">
+						<p>&nbsp;</p>
+						<p class="vl">|</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+					</div>
+					<div class="time-forecast flex-column">
+						<p>11 AM</p>
+						<p class="vl">|</p>
+						<p>
+							<img src="assets/Weather-Icons/rainyIcon.svg" alt="Rainy Icon" />
+						</p>
+						<p>8</p>
+					</div>
+					<div class="time-forecast-middle flex-column">
+						<p>&nbsp;</p>
+						<p class="vl">|</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+					</div>
+					<div class="time-forecast flex-column">
+						<p>12 PM</p>
+						<p class="vl">|</p>
+						<p>
+							<img src="assets/Weather-Icons/windyIcon.svg" alt="Windy Icon" />
+						</p>
+						<p>8</p>
+					</div>
+					<div class="time-forecast-middle flex-column">
+						<p>&nbsp;</p>
+						<p class="vl">|</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+					</div>
+					<div class="time-forecast flex-column">
+						<p>11 AM</p>
+						<p class="vl">|</p>
+						<p>
+							<img src="assets/Weather-Icons/rainyIcon.svg" alt="Rainy Icon" />
+						</p>
+						<p>6</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="middle-section">
+				<header>
+					<div>
+						<span>&nbsp;</span>
+					</div>
+					<div class="middle-head">
+						<span>Top cities around the world</span>
+					</div>
+					<div class="head-img">
+						<form class="icons" id="icons">
+							<input
+								type="radio"
+								name="weather-sort"
+								value="sunny"
+								class="radio"
+								id="sunny"
+								checked
+							/>
+							<label for="sunny" class="radio-label">
+								<img
+									src="assets/Weather-Icons/sunnyIcon.svg"
+									alt="Sunny Icon"
+								/>
+							</label>
+							<input
+								type="radio"
+								name="weather-sort"
+								value="cold"
+								class="radio"
+								id="cold"
+							/>
+							<label for="cold" class="radio-label"
+								><img
+									src="assets/Weather-Icons/snowflakeIcon.svg"
+									alt="Snowflake Icon"
+							/></label>
+							<input
+								type="radio"
+								name="weather-sort"
+								value="rainy"
+								class="radio"
+								id="rainy"
+							/>
+							<label for="rainy" class="radio-label">
+								<img
+									src="assets/Weather-Icons/rainyIcon.svg"
+									alt="Rainy Icon"
+								/>
+							</label>
+						</form>
+						<form>
+							<input
+								type="number"
+								min="3"
+								max="10"
+								class="inputbox"
+								id="range"
+								value="4"
+							/>
+						</form>
+					</div>
+				</header>
+				<main>
+					<button class="arrows" id="left">
+						<img
+							src="assets/General-Images/backwardArrow.svg"
+							alt="Backward Arrow"
+						/>
+					</button>
+					<div class="card-container" id="card-container">
+						<div class="card">
+							<div class="card-content">
+								<span>New Delhi</span>
+								<span>10.00 AM</span>
+								<span>2-MAR-2020</span>
+								<span>
+									<img
+										src="assets/Weather-Icons/humidityIcon.svg"
+										alt="Humidity Icon"
+									/>
+									53%
+								</span>
+								<span>
+									<img
+										src="assets/Weather-Icons/precipitationIcon.svg"
+										alt="Precipitation Icon"
+									/>
+									53%
+								</span>
+							</div>
+							<span class="card-weather">
+								<img
+									src="assets/Weather-Icons/sunnyIcon.svg"
+									alt="Sunny Icon"
+								/>
+								25 &#8451;
+							</span>
+						</div>
+
+						<div class="card">
+							<div class="card-content">
+								<span>New Delhi</span>
+								<span>10.00 AM</span>
+								<span>2-MAR-2020</span>
+								<span>
+									<img
+										src="assets/Weather-Icons/humidityIcon.svg"
+										alt="Humidity Icon"
+									/>
+									53%
+								</span>
+								<span>
+									<img
+										src="assets/Weather-Icons/precipitationIcon.svg"
+										alt="Precipitation Icon"
+									/>
+									53%
+								</span>
+							</div>
+							<span class="card-weather">
+								<img
+									src="assets/Weather-Icons/sunnyIcon.svg"
+									alt="Sunny Icon"
+								/>
+								25 &#8451;
+							</span>
+						</div>
+
+						<div class="card">
+							<div class="card-content">
+								<span>New Delhi</span>
+								<span>10.00 AM</span>
+								<span>2-MAR-2020</span>
+								<span>
+									<img
+										src="assets/Weather-Icons/humidityIcon.svg"
+										alt="Humidity Icon"
+									/>
+									53%
+								</span>
+								<span>
+									<img
+										src="assets/Weather-Icons/precipitationIcon.svg"
+										alt="Precipitation Icon"
+									/>
+									53%
+								</span>
+							</div>
+							<span class="card-weather">
+								<img
+									src="assets/Weather-Icons/sunnyIcon.svg"
+									alt="Sunny Icon"
+								/>
+								25 &#8451;
+							</span>
+						</div>
+
+						<div class="card">
+							<div class="card-content">
+								<span>New Delhi</span>
+								<span>10.00 AM</span>
+								<span>2-MAR-2020</span>
+								<span>
+									<img
+										src="assets/Weather-Icons/humidityIcon.svg"
+										alt="Humidity Icon"
+									/>
+									53%
+								</span>
+								<span>
+									<img
+										src="assets/Weather-Icons/precipitationIcon.svg"
+										alt="precipitation Icon"
+									/>
+									53%
+								</span>
+							</div>
+							<span class="card-weather">
+								<img
+									src="assets/Weather-Icons/sunnyIcon.svg"
+									alt="Sunny Icon"
+								/>
+								25 &#8451;
+							</span>
+						</div>
+					</div>
+					<button class="arrows" id="right" title="previous">
+						<img
+							src="assets/General-Images/forwardArrow.svg"
+							alt="Forward Arrow"
+						/>
+					</button>
+				</main>
+			</section>
+
+			<section class="bottom-section">
+				<header class="bottom-head">
+					<div style="font-size: x-large">
+						Cities across continents at a glance
+					</div>
+					<div>
+						<label for="sort-continent">Continent Name</label>
+						<button class="bottom-sec-sort" id="sort-continent" value="Desc">
+							<img
+								src="assets/General-Images/arrowDown.svg"
+								alt=" Arrow Down"
+							/>
+						</button>
+						<label for="sort-temp">Temperature</label>
+						<button class="bottom-sec-sort" id="sort-temp" value="Asc">
+							<img src="assets/General-Images/arrowUp.svg" alt="Arrow Up" />
+						</button>
+					</div>
+				</header>
+				<main>
+					<div class="tile-container" id="tile-container">
+						<div class="tile">
+							<div class="left-tile">
+								<span>Asia</span>
+								<span>Delhi, 10.00 AM</span>
+							</div>
+							<div class="right-tile">
+								<span> <b>38 &#8451;</b> </span>
+								<span>
+									<img
+										src="assets/Weather-Icons/humidityIcon.svg"
+										alt="Humidity Icon"
+									/>
+									53%
+								</span>
+							</div>
+						</div>
+						<div class="tile">
+							<div class="left-tile">
+								<span>Asia</span>
+								<span>Delhi, 10.00 AM</span>
+							</div>
+							<div class="right-tile">
+								<span> <b>38 &#8451;</b> </span>
+								<span>
+									<img
+										src="assets/Weather-Icons/humidityIcon.svg"
+										alt="Humidity Icon"
+									/>
+									53%
+								</span>
+							</div>
+						</div>
+						<div class="tile">
+							<div class="left-tile">
+								<span>Asia</span>
+								<span>Delhi, 10.00 AM</span>
+							</div>
+							<div class="right-tile">
+								<span> <b>38 &#8451;</b> </span>
+								<span>
+									<img
+										src="assets/Weather-Icons/humidityIcon.svg"
+										alt="Humidity Icon"
+									/>
+									53%
+								</span>
+							</div>
+						</div>
+						<div class="tile">
+							<div class="left-tile">
+								<span>Asia</span>
+								<span>Delhi, 10.00 AM</span>
+							</div>
+							<div class="right-tile">
+								<span> <b>38 &#8451;</b> </span>
+								<span>
+									<img
+										src="assets/Weather-Icons/humidityIcon.svg"
+										alt="Humidity Icon"
+									/>
+									53%
+								</span>
+							</div>
+						</div>
+						<div class="tile">
+							<div class="left-tile">
+								<span>Asia</span>
+								<span>Delhi, 10.00 AM</span>
+							</div>
+							<div class="right-tile">
+								<span> <b>38 &#8451;</b> </span>
+								<span>
+									<img
+										src="assets/Weather-Icons/humidityIcon.svg"
+										alt="Humidity Icon"
+									/>
+									53%
+								</span>
+							</div>
+						</div>
+						<div class="tile">
+							<div class="left-tile">
+								<span>Asia</span>
+								<span>Delhi, 10.00 AM</span>
+							</div>
+							<div class="right-tile">
+								<span> <b>38 &#8451;</b> </span>
+								<span>
+									<img
+										src="assets/Weather-Icons/humidityIcon.svg"
+										alt="Humidity Icon"
+									/>
+									53%
+								</span>
+							</div>
+						</div>
+						<div class="tile">
+							<div class="left-tile">
+								<span>Asia</span>
+								<span>Delhi, 10.00 AM</span>
+							</div>
+							<div class="right-tile">
+								<span> <b>38 &#8451;</b> </span>
+								<span>
+									<img
+										src="assets/Weather-Icons/humidityIcon.svg"
+										alt="Humidity Icon"
+									/>
+									53%
+								</span>
+							</div>
+						</div>
+						<div class="tile">
+							<div class="left-tile">
+								<span>Asia</span>
+								<span>Delhi, 10.00 AM</span>
+							</div>
+							<div class="right-tile">
+								<span> <b>38 &#8451;</b> </span>
+								<span>
+									<img
+										src="assets/Weather-Icons/humidityIcon.svg"
+										alt="Humidity Icon"
+									/>
+									53%
+								</span>
+							</div>
+						</div>
+						<div class="tile">
+							<div class="left-tile">
+								<span>Asia</span>
+								<span>Delhi, 10.00 AM</span>
+							</div>
+							<div class="right-tile">
+								<span> <b>38 &#8451;</b> </span>
+								<span>
+									<img
+										src="assets/Weather-Icons/humidityIcon.svg"
+										alt="Humidity Icon"
+									/>
+									53%
+								</span>
+							</div>
+						</div>
+						<div class="tile">
+							<div class="left-tile">
+								<span>Asia</span>
+								<span>Delhi, 10.00 AM</span>
+							</div>
+							<div class="right-tile">
+								<span> <b>38 &#8451;</b> </span>
+								<span>
+									<img
+										src="assets/Weather-Icons/humidityIcon.svg"
+										alt="Humidity Icon"
+									/>
+									53%
+								</span>
+							</div>
+						</div>
+						<div class="tile">
+							<div class="left-tile">
+								<span>Asia</span>
+								<span>Delhi, 10.00 AM</span>
+							</div>
+							<div class="right-tile">
+								<span> <b>38 &#8451;</b> </span>
+								<span>
+									<img
+										src="assets/Weather-Icons/humidityIcon.svg"
+										alt="Humidity Icon"
+									/>
+									53%
+								</span>
+							</div>
+						</div>
+						<div class="tile">
+							<div class="left-tile">
+								<span>Asia</span>
+								<span>Delhi, 10.00 AM</span>
+							</div>
+							<div class="right-tile">
+								<span> <b>38 &#8451;</b> </span>
+								<span>
+									<img
+										src="assets/Weather-Icons/humidityIcon.svg"
+										alt="Humidity Icon"
+									/>
+									53%
+								</span>
+							</div>
+						</div>
+					</div>
+				</main>
+			</section>
+		</main>
+		<script src="./scripts/data.js"></script>
+
+		<script src="./scripts/top-section.js"></script>
+		<script src="./scripts/middle-section.js"></script>
+		<script src="./scripts/bottom-section.js"></script>
+		<script src="./scripts/webAPI.js"></script>
+	</body>
+</html>

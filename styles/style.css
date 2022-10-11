@@ -1,0 +1,53 @@
+@import url("vars.css");
+@import url("top-section.css");
+@import url("middle-section.css");
+@import url("bottom-section.css");
+
+/* Applying basic styles */
+html {
+	box-sizing: border-box;
+	color: var(--light-grey-text);
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	background-color: var(--primary-black);
+	font-size: 2rem;
+	height: 100%;
+	line-height: 4rem;
+	margin: 0px;
+}
+
+.main-container {
+	background-image: url("../assets/General-Images/background.svg");
+	background-size: cover;
+	display: grid;
+}
+
+@media (max-width: 2200px) {
+	body {
+		font-size: 1.5rem;
+		line-height: 3rem;
+	}
+}
+
+@media (max-width: 1780px) {
+	body {
+		font-size: 1.2rem;
+		line-height: 2.4rem;
+	}
+}
+
+@media (max-width: 1300px) {
+	body {
+		font-size: 1rem;
+		line-height: 2rem;
+	}
+}
+
+@media (max-width: 1000px) {
+	body {
+		font-size: 0.7rem;
+		line-height: 1.4rem;
+	}
+}

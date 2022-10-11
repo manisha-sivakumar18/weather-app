@@ -1,0 +1,134 @@
+/* Top  Section Style */
+.top-section {
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-template-areas: "city-icon second-col third-col third-col forecast forecast forecast forecast";
+	align-items: center;
+	padding: 2rem 0;
+	width: 95%;
+	margin: 0 auto;
+}
+
+.city-icon img {
+	width: 70%;
+	float: right;
+}
+
+.city-icon {
+	grid-area: city-icon;
+	min-width: 4rem;
+	align-self: start;
+	padding-right: 1.5vw;
+}
+
+.second-col {
+	grid-area: second-col;
+	margin: 0 auto;
+}
+
+.input-box {
+	background-color: var(--bg-input-box);
+	color: var(--primary-white);
+	padding: 0.5rem 0;
+	text-align: center;
+	font-size: 1.2vw;
+	border: none;
+	margin: auto;
+	width: 80%;
+}
+
+input[name="city"] {
+	width: 100%;
+}
+
+.date,
+.time {
+	align-self: center;
+}
+
+.time {
+	color: var(--pale-yellow-text);
+	font-size: larger;
+}
+
+.time img {
+	width: 2vw;
+}
+
+.second {
+	font-size: smaller;
+}
+
+.bold-span-styles {
+	font-weight: bolder;
+	color: var(--primary-white);
+}
+
+.third-col {
+	grid-area: third-col;
+	display: flex;
+	gap: 5%;
+	justify-content: center;
+}
+
+.temp {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.temp > div {
+	padding-right: 10px;
+}
+
+.atmo {
+	text-align: left;
+}
+
+.temp > div:nth-child(1),
+.atmo > div:nth-child(1) {
+	margin-bottom: 5px;
+}
+
+.temp span,
+.atmo span {
+	display: block;
+}
+
+.forecast {
+	grid-area: forecast;
+	padding-right: 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	flex: 1 1 0px;
+	overflow: auto hidden;
+}
+
+.time-forecast,
+.time-forecast-middle {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.time-forecast > p,
+.time-forecast-middle > p {
+	margin: 1.6vh 0;
+	flex: 0 1 100%;
+	max-height: 1rem;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.time-forecast img {
+	max-width: 1.5rem;
+	margin: 0;
+}
+
+@media (max-width: 1124px) {
+	.time-forecast > p,
+	.time-forecast-middle > p {
+		margin: 1vh;
+	}
+}

@@ -1,0 +1,146 @@
+.arrows {
+	align-items: center;
+	background-color: var(--primary-white);
+	border-radius: 50%;
+	padding: 0.3rem;
+	visibility: hidden;
+	/* display: none; */
+}
+
+.arrows img {
+	margin: 0 auto;
+}
+
+.card {
+	background: var(--bg-dark-grey-tile)
+		url("../assets/Icons-for-cities/kolkata.svg") no-repeat;
+	background-position: bottom right;
+	background-size: 55%;
+	border-radius: 5px;
+	min-width: 9.5rem;
+	padding: 10px;
+}
+
+.card:hover {
+	box-shadow: 3px 4px var(--bg-grey-tile);
+	transform: scale(1.1, 1.1);
+}
+
+.card img,
+.middle-section img {
+	margin: 0 2px;
+	width: 1.4rem;
+}
+
+.card-container {
+	display: grid;
+	gap: 2rem;
+	grid-auto-columns: calc((100% - 2 * 50px) / 4);
+	grid-auto-flow: column;
+	/* justify-content: center; */
+	/* justify-items: center; */
+	margin: 0.7rem 2rem;
+	overflow: hidden;
+	padding: 30px;
+	width: 90%;
+	scroll-behavior: smooth;
+}
+
+.card-content {
+	align-items: flex-start;
+	display: inline-flex;
+	flex-direction: column;
+	float: left;
+	font-size: small;
+	gap: 0.5rem;
+	padding-bottom: 2rem;
+}
+
+.card > span,
+.card-content > span:nth-child(n + 2) {
+	font-size: small;
+}
+
+.card-content > span:nth-child(-n + 3) {
+	color: var(--primary-white);
+	font-weight: bold;
+}
+
+.card-weather {
+	float: right;
+	font-size: large;
+}
+
+.head-img input {
+	line-height: 0.5rem;
+}
+
+.head-img,
+.middle-head {
+	display: flex;
+	float: right;
+	gap: 0.7rem;
+}
+
+.middle-head {
+	font-size: large;
+}
+
+.middle-section {
+	background-color: var(--primary-black);
+	border-radius: 1.5rem 1.5rem 0px 0px;
+	overflow: auto hidden;
+	padding: 20px;
+}
+
+.middle-section header {
+	background-color: var(--primary-black);
+	display: flex;
+	justify-content: space-between;
+	left: 0;
+	margin: 0 auto;
+	position: sticky;
+	top: 0;
+	width: 90%;
+	z-index: 1;
+}
+
+.middle-section main {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.middle-section > img {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.selected {
+	border-bottom: 1px solid var(--light-blue-border);
+}
+.radio {
+	display: none;
+}
+.radio:checked + .radio-label > img {
+	border-bottom: 1.5px solid var(--light-blue-border);
+}
+@media (max-width: 900px) {
+	.card {
+		min-width: 7rem;
+	}
+
+	.card-container {
+		grid-auto-columns: calc((100% - 60px) / 3);
+	}
+}
+
+@media (max-width: 760px) {
+	.card {
+		min-width: 4rem;
+	}
+
+	.card-container {
+		grid-auto-columns: calc((100% - 60px) / 2);
+	}
+}
